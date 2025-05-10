@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSolutions</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333333;
+        }
+        .mini-nav{
+            display: flex;
+            margin: 40px auto 20px 185px;
+        }
+
+        .mini-nav a{
+            display: flex;
+            padding: 12px 24px 12px 40px;
+            position: relative;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 20px 100%, 0% 50%);
+            margin-right: -20px;
+        }
+
+        .mini-nav a:first-child{
+            padding-right: 40px;
+        }
+
+        .mini-nav a:nth-child(1){
+            background-color: #1e90ff;
+        }
+
+        .mini-nav a:nth-child(2){
+            background-color: #38b6ff;
+            padding-right: 40px;
+        }
+
+        .mini-nav a:nth-child(3){
+            background-color: #87cefa;
+        }
+
+        .mini-nav img{
+            width: 18px;
+            height: 18px;
+        }
+
+        .servicos{
+            display: grid;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .servicos-item{
+            background-color: beige;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding: 20px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .servicos-conteudo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            gap: 40px;
+        }
+
+        .icons{
+            width: 50px;
+            height: 50px;
+        }
+
+        .titulo{
+            font-size: 28px;
+        }
+
+        .destaque{
+            background-color: #38b6ff;
+            padding: 2px 6px;
+        }
+
+        .info{
+            position: absolute;
+            height: 100%;
+            width: 60px;
+            background-color: #38b6ff;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            transition: width 0.8s ease;
+            overflow: hidden;
+        }
+
+        .info:hover{
+            width: 50%;
+        }
+
+        .info span{
+            display: flex;
+            margin-top: 100px;
+            color: white;
+            font-size: 20px;
+            width: 400px;
+            max-width: 400px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            position: absolute;
+        }
+
+        .info:hover span{
+            opacity: 1;
+        }
+
+        .mais {
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+
+        .info:hover .mais {
+            opacity: 0;
+        }
+
+        .contato{
+            background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            margin-top: 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            box-sizing: border-box;
+            color: white;
+            position: relative;
+        }
+
+        .contato::before{
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            z-index: 0;
+
+        }
+
+        .texto{
+            font-size: 24px;
+            font-weight: bold;
+            max-width: 60%;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .btn{
+            background-color: #1e70d1;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 1;
+        }
+
+        .btn:hover{
+            background-color: #f0f0f0;
+            color: #1e70d1;
+        }
+
+        @media (max-width: 768px) {
+        .contato {
+            flex-direction: column;
+            text-align: center;
+            padding: 30px 20px;
+            height: auto;
+            gap: 20px;
+           }
+        }
+
+        .texto {
+            max-width: 100%;
+      }
+
+        .btn {
+            padding: 12px 20px;
+            font-size: 14px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <div class="logo">
+            <img src="/Telas/logo.png" alt="Logo da DevSolutions" class="logo-img">
+            <span>Dev<span>Solutions</span></span>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+    <!--MINI-NAV-->
+    <section class="mini-nav">
+        <a href="home.html"><img src="https://img.icons8.com/?size=100&id=j9z5XK2udFGv&format=png&color=FFFFFF" alt="Home"></a>
+        <a href="sobre.html">Sobre</a>
+        <a href="servicos.html">Serviços</a>
+    </section>
+
+    <!--SERVIÇO 1-->
+    <section class="servicos">
+        <div class="servicos-item" style="background-image: url('https://images.unsplash.com/photo-1617228679684-890412dc57a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <div class="servicos-conteudo">
+                <img src="https://img.icons8.com/?size=100&id=25049&format=png&color=FFFFFF" alt="icons" class="icons">
+                <div class="titulo">
+                    Plataformas e <span class="destaque">Sistemas</span>
+                </div>
+            </div>
+            <div class="info" style="right: 0;">
+                <div class="mais">+</div>
+                <span>
+                    Desenvolvimento de plataformas personalizadas para gestão empresarial e automação de processos.
+                </span>
+            </div>
+        </div>
+        <!--SERVIÇO 2-->
+        <div class="servicos-item" style="background-image: url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); justify-content: flex-end;">
+            <div class="servicos-conteudo">
+                <img src="https://img.icons8.com/?size=100&id=10333&format=png&color=FFFFFF" alt="icons" class="icons">
+                <div class="titulo">
+                    Sites <span class="destaque">Grenciáveis</span>
+                </div>
+            </div>
+            <div class="info" style="left: 0;">
+                <div class="mais">+</div>
+                <span>
+                    Criação de sites gerenciáveis com painéis intuitivos para fácil administração de conteúdo.
+                </span>
+            </div>
+        </div>
+        <!--SERVIÇO 3-->
+        <div class="servicos-item" style="background-image: url('https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <div class="servicos-conteudo">
+                <img src="https://img.icons8.com/?size=100&id=2TAJE39TIzvw&format=png&color=FFFFFF" alt="icons" class="icons">
+                <div class="titulo">
+                    Aplicativos <span class="destaque">Mobile</span>
+                </div>
+            </div>
+            <div class="info" style="right: 0;">
+                <div class="mais">+</div>
+                <span>
+                    Desenvolvimento de aplicativos móveis para Android e iOS com funcionalidades modernas.
+                </span>
+            </div>
+        </div>
+        <!--SERVIÇO 4-->
+        <div class="servicos-item" style="background-image: url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); justify-content: flex-end;">
+            <div class="servicos-conteudo">
+                <img src="https://img.icons8.com/?size=100&id=erqkbsPcVXeZ&format=png&color=FFFFFF" alt="icons" class="icons">
+                <div class="titulo">
+                    <span class="destaque">Marketing</span> Digital
+                </div>
+            </div>
+            <div class="info" style="left: 0;">
+                <div class="mais">+</div>
+                <span>
+                    Soluções estratégicas de marketing digital para melhorar a presença online da sua empresa.
+                </span>
+            </div>
+        </div>
+        <!--SERVIÇO 5-->
+        <div class="servicos-item" style="background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="servicos-conteudo">
+                <img src="https://img.icons8.com/?size=100&id=HaIBVDvtZ8H7&format=png&color=FFFFFF" alt="icons" class="icons">
+                <div class="titulo">
+                    <span class="destaque">Design</span> e <span class="destaque">Animação</span> 2D
+                </div>
+            </div>
+            <div class="info" style="right: 0;">
+                <div class="mais">+</div>
+                <span>
+                    Produção de vídeos animados e design gráfico para campanhas e apresentações visuais.
+                </span>
+            </div>
+        </div>
+        <!--SERVIÇO 6-->
+        <div class="servicos-item" style="background-image: url('https://images.unsplash.com/photo-1573166584647-2c1366f9b219?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); justify-content: flex-end;">
+            <div class="servicos-conteudo">
+                <img src="https://img.icons8.com/?size=100&id=9911&format=png&color=FFFFFF" alt="icons" class="icons">
+                <div class="titulo">
+                    <span class="destaque">Hospedagem</span> de Sites
+                </div>
+            </div>
+            <div class="info" style="left: 0;">
+                <div class="mais">+</div>
+                <span>
+                    Serviço de hospedagem segura e rápida para sites e plataformas online.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!--CONTATO-->
+    <section class="contato">
+        <div class="texto">Criação de aplicativos, sistemas, sites, lojas virtuais e identidade visual.</div>
+        <a href="contato.html" class="btn">Solicitar um Orçamento</a>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-col logo-col">
+            <h2>DevSolutions<br><span>Software</span></h2>
+            <p>Copyright ©2025 DevSolutions - Todos os Direitos Reservados.</p>
+          </div>
+          <div class="footer-col">
+            <h3>INSTITUCIONAL</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>SERVIÇOS</h3>
+            <ul>
+              <li><a href="#">Plataformas e Sistemas</a></li>
+              <li><a href="#">Sites Gerenciáveis</a></li>
+              <li><a href="#">Aplicativos Mobile</a></li>
+              <li><a href="#">Marketing Digital e SEO</a></li>
+              <li><a href="#">Design e Animações 2D</a></li>
+              <li><a href="#">Hospedagem de Sites</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>NOS ACOMPANHE</h3>
+            <div class="social-icons">
+              <a href="#">📘</a>
+              <a href="#">🔗</a>
+              <a href="#">🐦</a>
+              <a href="#">🅖</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>

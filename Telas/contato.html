@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSolutions</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #333333;
+        }
+
+       .mini-nav{
+            display: flex;
+            margin: 40px auto 20px 185px;
+        }
+
+        .mini-nav a{
+            display: flex;
+            padding: 12px 24px 12px 40px;
+            position: relative;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            clip-path: polygon(20px 0%, 100% 0%, 100% 100%, 20px 100%, 0% 50%);
+            margin-right: -20px;
+        }
+
+        .mini-nav a:first-child{
+            padding-right: 40px;
+        }
+
+        .mini-nav a:nth-child(1){
+            background-color: #1e90ff;
+        }
+
+        .mini-nav a:nth-child(2){
+            background-color: #38b6ff;
+            padding-right: 40px;
+        }
+
+        .mini-nav a:nth-child(3){
+            background-color: #87cefa;
+        }
+
+        .mini-nav img{
+            width: 18px;
+            height: 18px;
+        }
+
+        .contato-detalhes {
+            max-width: 800px;
+            margin: 40px auto auto 160px;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+        }
+
+        .destaque{
+            color: #38b6ff;
+        }
+
+        .contato-detalhes h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .contato-detalhes .subtitulo {
+           font-size: 20px;
+           margin-bottom: 20px;
+           color: white;
+        }
+
+        .contato-detalhes .descricao {
+          font-size: 18px;
+          line-height: 1.6;
+
+        }
+
+
+        .secao-formulario {
+          background-color: #4da1ec;
+          width: 97.5%;
+          min-height: 80vh;
+          padding: 40px 20px;
+        }
+
+        .formulario-contato {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          max-width: 100%;
+        }
+
+        .grupo-campo {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        label, legend {
+          font-weight: bold;
+          color: white;
+        }
+
+        input, select, textarea {
+          padding: 10px;
+          font-size: 16px;
+          border: none;
+          border-radius: 4px;
+          width: 100%;
+        }
+
+        .grupo-duplo {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+        } 
+
+        .grupo-duplo .grupo-campo {
+          flex: 1;
+          min-width: 200px;
+        }
+
+        .botao-enviar {
+          padding: 12px;
+          font-size: 16px;
+          background-color: #1e70d1;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        .botao-enviar:hover {
+          background-color: #1657a7;
+        }
+
+        fieldset {
+          border: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+          <div class="logo">
+            <img src="/Telas/logo.png" alt="Logo da DevSolutions" class="logo-img">
+            <span>Dev<span>Solutions</span></span>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="contato.html">Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+    <!--MINI-NAV-->
+    <section class="mini-nav">
+        <a href="home.html"><img src="https://img.icons8.com/?size=100&id=j9z5XK2udFGv&format=png&color=FFFFFF" alt="Home"></a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </section>
+    <!--ENTRAR EM CONTATO-->
+    <section class="contato-detalhes">
+        <h1><span class="destaque">Entre em</span> contato</h1>
+        <p class="subtitulo">
+          Quanto custa fazer um aplicativo? Qual o prazo para desenvolvimento de aplicativos e sistemas?
+        </p>
+        <p class="descricao">
+            Entre em contato com nossa equipe para que possamos ajudá-lo(a) com estas e outras dúvidas.
+            Estamos localizados em <strong>Salvador</strong>.<br>
+            Você pode preencher os campos do formulário abaixo para enviar um e-mail ou fale conosco através do telefone:
+            <span class="destaque">(71) 3058-2208</span>.
+        </p>
+      </section>
+
+      <section class="secao-formulario">
+        <form class="formulario-contato">
+          <fieldset class="grupo-campo">
+            <legend>* Qual o assunto deste e-mail?</legend>
+            <select id="assunto" name="assunto">
+              <option value="" disabled selected hidden>Selecione uma opção...</option>
+              <option value="suporte">Suporte</option>
+              <option value="orcamento">Orçamento</option>
+              <option value="outro">Outro</option>
+            </select>
+          </fieldset>
+    
+          <fieldset class="grupo-campo">
+            <label for="nome">* Informe o seu nome</label>
+            <input type="text" id="nome" name="nome"/>
+          </fieldset>
+    
+          <div class="grupo-duplo">
+            <fieldset class="grupo-campo">
+              <label for="email">* Informe o seu email</label>
+              <input type="email" id="email" name="email"/>
+            </fieldset>
+            <fieldset class="grupo-campo">
+              <label for="telefone">* Informe o seu telefone</label>
+              <input type="tel" id="telefone" name="telefone"/>
+            </fieldset>
+          </div>
+    
+          <fieldset class="grupo-campo">
+            <label for="mensagem">* Informe aqui a sua mensagem!</label>
+            <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+          </fieldset>
+    
+          <button type="submit" class="botao-enviar">Enviar</button>
+        </form>
+
+
+        <script>
+            document.querySelector('.formulario-contato').addEventListener('submit', function (event) {
+              event.preventDefault();
+          
+              const assunto = document.getElementById('assunto').value.trim();
+              const nome = document.getElementById('nome').value.trim();
+              const email = document.getElementById('email').value.trim();
+              const telefone = document.getElementById('telefone').value.trim();
+              const mensagem = document.getElementById('mensagem').value.trim();
+          
+              if (!assunto || !nome || !email || !telefone || !mensagem) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+              } else {
+                alert('Mensagem enviada com sucesso!');
+                this.reset();
+              }
+            });
+          </script>
+          
+          
+</body>
+</html>

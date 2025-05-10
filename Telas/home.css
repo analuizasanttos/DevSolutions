@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  header {
+    background-color: black; /* alterado de white para black */
+    padding: 20px 0;
+    border-bottom: 1px solid #222; /* tom mais escuro para combinar */
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* logo em branco */
+  }
+  
+  .logo span {
+    color: #00bfff; /* destaque azul claro */
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  nav a {
+    color: white; /* links brancos */
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    color: #00bfff; /* azul claro ao passar o mouse */
+  }
+  
+  .hero {
+    background-image: url("/Telas/fundohero.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.5;
+  }
+  
+  .hero strong {
+    color: #fff;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #0099ff;
+    color: white;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #007acc;
+  }
+  
+  footer {
+    background-color: #0078d7;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-col {
+    flex: 1 1 200px;
+    margin: 10px 20px;
+  }
+  
+  .footer-col h3 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-col ul li a {
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .footer-col ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    font-size: 24px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .logo-img {
+    height: 40px;
+    width: auto;
+  }
+
+  .welcome {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .welcome-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-title .blue {
+    color: #0078d7;
+  }
+  
+  .welcome-title .black {
+    color: #000;
+  }
+  
+  .welcome-description {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .feature-item {
+    flex: 1 1 250px;
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  .feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .feature-item h3 {
+    color: #0078d7;
+    margin-bottom: 10px;
+  }
+  
+  .feature-item p {
+    color: #666;
+    font-size: 16px;
+  }
+
+  .testimonials {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 28px;
+    color: #007acc;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .testimonial {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 300px;
+    text-align: left;
+  }
+  
+  .testimonial p {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial h4 {
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .testimonial span {
+    color: #888;
+    font-size: 14px;
+  }
+
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .hero h1 {
+      font-size: 24px;
+    }
+  
+    .btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-col {
+      margin: 20px 0;
+      text-align: center;
+    }
+  
+    .testimonial-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .testimonial {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .logo span {
+      font-size: 20px;
+    }
+  
+    .hero-content h1 {
+      font-size: 20px;
+      line-height: 1.3;
+    }
+  
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .testimonial {
+      padding: 15px 20px;
+    }
+  }
+
+  /* Seção Quem Somos */
+.sobre h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sobre h1 span {
+    color: #0078d7;
+  }
+  
+  .sobre p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Valores da empresa */
+  .valores {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .valor {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 280px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  
+  .valor h3 {
+    color: #0078d7;
+    margin-bottom: 0.5rem;
+  }
+  
+  .valor p {
+    color: #555;
+  }
+  
+  /* Responsividade da seção Quem Somos */
+  @media (max-width: 768px) {
+    .valores {
+      flex-direction: column;
+    }
+  }
+
+  .hero-sobre {
+    background-image: url("/Telas/fundohero.jpg"); /* troque pela imagem desejada */
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-sobre-content {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .hero-sobre h1 {
+    font-size: 36px;
+    line-height: 1.4;
+  }
+  
+  .hero-sobre strong {
+    color: #00bfff;
+  }
+  
+  .hero-sobre span {
+    color: white;
+  }
+  
+  .hero-sobre p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #e0e0e0;
+  }
+
+  .btn-sobre {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #0099ff;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+  }
+  
+  .btn-sobre:hover {
+    background-color: #007acc;
+  }
+
+
+.sobre-historia, .sobre-missao, .sobre-visao, .sobre-valores, .sobre-objetivos {
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .sobre-historia {
+    background-color: #f4f4f4;
+  }
+  
+  .sobre-missao {
+    background-color: #e9f5ff;
+  }
+  
+  .sobre-visao {
+    background-color: #f4f4f4;
+  }
+  
+  .sobre-valores {
+    background-color: #e9f5ff;
+  }
+  
+  .sobre-objetivos {
+    background-color: #f4f4f4;
+  }
+  
+  /* Título centralizado */
+  .sobre-historia h2, .sobre-missao h2, .sobre-visao h2, .sobre-valores h2, .sobre-objetivos h2 {
+    font-size: 32px;
+    color: #0099ff; /* Cor azul */
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Parágrafos para as informações */
+  .sobre-historia p, .sobre-missao p, .sobre-visao p, .sobre-valores p, .sobre-objetivos p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Lista para os valores */
+  .sobre-valores ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .sobre-valores li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .sobre-valores li strong {
+    color: #0099ff; /* Cor azul para os títulos dos valores */
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+ 
+  
+ 
